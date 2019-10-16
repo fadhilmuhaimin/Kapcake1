@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.exomatik.kapcake.Activity.GetKoneksi"
+    android:background="@color/putih"
+    >
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enable"
+        android:textColor="@color/hitam"
+        android:theme="@style/Theme.Design.Light"
+        android:id="@+id/cb_enable"
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visible"
+        android:textColor="@color/hitam"
+        android:theme="@style/Theme.Design.Light"
+        android:id="@+id/cb_visible"
+        android:layout_alignParentRight="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Bluetooth Name"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/hitam"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:id="@+id/text_nama"
+        />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search_gray"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/text_nama"
+        android:id="@+id/btn_search"
+        android:background="@drawable/border_putih_radius_gray"
+        android:layout_marginTop="@dimen/margin_standard"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_search"
+        android:id="@+id/rcBluetooth"
+        android:layout_marginTop="@dimen/margin_standard"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

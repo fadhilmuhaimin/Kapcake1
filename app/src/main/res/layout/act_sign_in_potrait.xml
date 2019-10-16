@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/putih"
+    android:orientation="horizontal"
+    tools:context="com.exomatik.kapcake.Authentication.ActSignIn">
+
+
+    <RelativeLayout
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/gradient_orange"
+        android:elevation="@dimen/margin_big"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.santalu.autoviewpager.AutoViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/width50"
+            android:layout_marginRight="@dimen/width100"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:overScrollMode="never"
+            app:avp_autoScroll="true"
+            app:avp_duration="5000"
+            app:avp_indeterminate="true" />
+
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            android:id="@+id/dotsIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="19dp"
+            android:layout_marginBottom="22dp"
+            app:dotsColor="@color/putih"
+            app:dotsCornerRadius="8dp"
+            app:dotsSize="16dp"
+            app:dotsSpacing="4dp"
+            app:dotsStrokeColor="@color/putih"
+            app:dotsStrokeWidth="2dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/img_user"
+            android:layout_width="@dimen/width100"
+            android:layout_height="@dimen/width100"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/border_circle_gray"
+            android:src="@drawable/ic_person_white" />
+
+        <TextView
+            android:id="@+id/text_sign_in_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_user"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_sign_in"
+            android:fontFamily="@font/monserrat_regular"
+            android:text="@string/sign_in2"
+            android:textAlignment="center"
+            android:textColor="@color/hitam"
+            android:textSize="@dimen/title_font" />
+
+        <LinearLayout
+            android:id="@+id/ln_mail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width50"
+            android:layout_below="@+id/text_sign_in_2"
+            android:layout_marginTop="@dimen/margin_sign_in"
+            android:background="@drawable/border_et_putih_hitam"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_big"
+                android:gravity="center_vertical"
+                android:src="@drawable/ic_mail_gray2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/et_input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/margin_standard"
+                android:textColorHint="@color/hitamGray2"
+                app:errorEnabled="true"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/monserrat_regular"
+                    android:hint="@string/text_email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/margin_standard_big"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingRight="@dimen/margin_standard_big"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:textColor="@color/hitam"
+                    android:textColorHint="@color/hitamGray2"
+                    android:textSize="@dimen/title_font" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_pass"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width50"
+            android:layout_below="@+id/ln_mail"
+            android:layout_marginTop="@dimen/margin_sign_in"
+            android:background="@drawable/border_et_putih_hitam"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_big"
+                android:gravity="center_vertical"
+                android:src="@drawable/ic_locked_gray2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/et_input_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingTop="@dimen/margin_standard"
+                android:textColorHint="@color/hitamGray2"
+                app:errorEnabled="true"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:background="@android:color/transparent"
+                    android:digits="@string/digit_pass"
+                    android:fontFamily="@font/monserrat_regular"
+                    android:hint="@string/text_pass"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/margin_standard_big"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingRight="@dimen/margin_standard_big"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:textColor="@color/hitam"
+                    android:textColorHint="@color/hitamGray2"
+                    android:textSize="@dimen/title_font" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width50"
+            android:layout_below="@+id/ln_pass"
+            android:layout_marginTop="@dimen/margin_sign_in"
+            android:background="@drawable/border_round_full_orange"
+            android:elevation="@dimen/margin_standard"
+            android:fontFamily="@font/monserrat_regular"
+            android:text="@string/text_login"
+            android:textColor="@color/putih"
+            android:textSize="@dimen/title_font" />
+
+        <LinearLayout
+            android:id="@+id/ln_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_login"
+            android:layout_marginTop="@dimen/margin_sign_in"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.3"
+                android:background="@color/putihGelap5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_standard"
+                android:layout_marginRight="@dimen/margin_standard"
+                android:fontFamily="@font/monserrat_regular"
+                android:text="@string/text_nothing_account"
+                android:textColor="@color/hitamGray2"
+                android:textSize="@dimen/text_font" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.3"
+                android:background="@color/putihGelap5" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width50"
+            android:layout_below="@+id/ln_center"
+            android:layout_marginTop="@dimen/margin_sign_in"
+            android:background="@drawable/border_round_full_putih_orange"
+            android:elevation="@dimen/margin_standard"
+            android:fontFamily="@font/monserrat_regular"
+            android:text="@string/text_sign_up"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/title_font" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
